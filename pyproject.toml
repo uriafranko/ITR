@@ -3,13 +3,26 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "itr"
+name = "instruction-tool-retrieval"
 version = "0.1.0"
 description = "Instruction-Tool Retrieval for efficient agentic LLMs"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
-authors = [{ name = "ITR Team", email = "itr@example.com" }]
+authors = [{ name = "Uria Franko", email = "uriafranko@gmail.com" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
 dependencies = [
     "numpy>=1.20.0",
     "sentence-transformers>=2.2.0",
@@ -21,6 +34,11 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "scikit-learn>=1.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/uria-franko/itr"
+Repository = "https://github.com/uria-franko/itr.git"
+"Bug Tracker" = "https://github.com/uria-franko/itr/issues"
 
 [project.optional-dependencies]
 dev = [
