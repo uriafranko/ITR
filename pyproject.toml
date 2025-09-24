@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "instruction-tool-retrieval"
-version = "0.1.0"
+version = "0.1.1"
 description = "Instruction-Tool Retrieval for efficient agentic LLMs"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -42,6 +42,7 @@ Repository = "https://github.com/uria-franko/itr.git"
 
 [project.optional-dependencies]
 dev = [
+    "build>=1.2.2.post1",
     "pytest>=7.0.0",
     "pytest-cov>=4.0.0",
     "pytest-mock>=3.10.0",
@@ -184,9 +185,12 @@ ignore = [
 [dependency-groups]
 dev = [
     "black>=24.8.0",
+    "build>=1.2.2.post1",
     "isort>=5.13.2",
     "psutil>=7.1.0",
     "pytest>=8.3.5",
     "pytest-cov>=5.0.0",
+    "rich>=14.1.0",
     "ruff>=0.13.1",
+    "twine>=6.1.0",
 ]

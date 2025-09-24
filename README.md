@@ -2,11 +2,48 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/uriafranko/ITR)](https://github.com/uriafranko/ITR/stargazers)
+[![GitHub contributors](https://img.shields.io/github/contributors/uriafranko/ITR)](https://github.com/uriafranko/ITR/graphs/contributors)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
 **ITR (Instruction-Tool Retrieval)** is a sophisticated system for efficiently retrieving and assembling the most relevant instructions and tools for agentic Large Language Models (LLMs). It enables intelligent context management for AI agents by dynamically selecting the optimal subset of instructions and tools based on user queries and token budget constraints.
 
-## =� Features
+> 💡 **Key Benefits**: Reduce context bloat, improve tool selection and latency, and optimize token usage through intelligent hybrid retrieval and budget-aware selection algorithms.
+
+## 📑 Table of Contents
+
+- [ITR: Instruction-Tool Retrieval](#itr-instruction-tool-retrieval)
+  - [📑 Table of Contents](#-table-of-contents)
+  - [🚀 Features](#-features)
+  - [📦 Installation](#-installation)
+    - [Using uv (Recommended)](#using-uv-recommended)
+    - [Using pip](#using-pip)
+    - [Development Installation](#development-installation)
+  - [⚡ Quick Start](#-quick-start)
+    - [Basic Usage](#basic-usage)
+    - [Loading from Files](#loading-from-files)
+    - [Using Pre-created Fragments](#using-pre-created-fragments)
+  - [🖥️ CLI Usage](#️-cli-usage)
+    - [Basic Retrieval](#basic-retrieval)
+    - [Interactive Mode](#interactive-mode)
+    - [Generate Configuration File](#generate-configuration-file)
+    - [Using Custom Configuration](#using-custom-configuration)
+  - [⚙️ Configuration](#️-configuration)
+    - [Configuration Files](#configuration-files)
+  - [🔍 How It Works](#-how-it-works)
+    - [Fragment Types](#fragment-types)
+  - [🎯 Performance](#-performance)
+  - [🤝 Contributing](#-contributing)
+    - [Development Setup](#development-setup)
+  - [📄 License](#-license)
+  - [🔗 Links](#-links)
+  - [📚 Examples](#-examples)
+  - [🔧 Troubleshooting](#-troubleshooting)
+    - [Common Issues](#common-issues)
+
+## 🚀 Features
 
 - **Hybrid Retrieval**: Combines dense (embedding-based) and sparse (BM25) retrieval methods
 - **Budget-Aware Selection**: Intelligent token budget management with greedy optimization
@@ -16,7 +53,7 @@
 - **Flexible Configuration**: Configurable parameters for different use cases
 - **Type Safety**: Full type hints for better development experience
 
-## =� Installation
+## 📦 Installation
 
 ### Using uv (Recommended)
 
@@ -25,8 +62,8 @@
 uv add itr
 
 # Or install from source
-git clone https://github.com/uria-franko/itr.git
-cd itr
+git clone https://github.com/uriafranko/ITR.git
+cd ITR
 uv sync
 ```
 
@@ -39,12 +76,12 @@ pip install itr
 ### Development Installation
 
 ```bash
-git clone https://github.com/uria-franko/itr.git
-cd itr
+git clone https://github.com/uriafranko/ITR.git
+cd ITR
 uv sync --dev
 ```
 
-## <� Quick Start
+## ⚡ Quick Start
 
 ### Basic Usage
 
@@ -141,7 +178,7 @@ itr.add_instruction_fragments(fragments)
 result = itr.step("Explain machine learning")
 ```
 
-## =� CLI Usage
+## 🖥️ CLI Usage
 
 ITR provides a command-line interface for easy testing and integration:
 
@@ -175,7 +212,7 @@ itr retrieve --config my-config.json \\
              --tools analysis_tools.json
 ```
 
-## � Configuration
+## ⚙️ Configuration
 
 ITR uses a flexible configuration system. You can customize behavior through the `ITRConfig` class:
 
@@ -210,7 +247,7 @@ config = ITRConfig(
 
 ### Configuration Files
 
-ITR supports JSON configuration files:
+ITR supports JSON, YAML and .env configuration files:
 
 ```json
 {
@@ -222,7 +259,7 @@ ITR supports JSON configuration files:
 }
 ```
 
-## >� How It Works
+## 🔍 How It Works
 
 ITR uses a multi-stage pipeline for instruction and tool retrieval:
 
@@ -242,7 +279,7 @@ ITR automatically categorizes instruction fragments:
 - `DOMAIN_SPECIFIC`: Task-specific instructions
 - `EXEMPLAR`: Examples and demonstrations
 
-## =� Performance
+## 🎯 Performance
 
 ITR is designed for efficiency:
 
@@ -251,15 +288,21 @@ ITR is designed for efficiency:
 - **Scalable**: Handles large instruction/tool corpora
 - **Token Aware**: Precise token counting and budget management
 
-## > Contributing
+### Token Optimization Results
+
+![ITR Performance Results](examples/results.png)
+
+*ITR achieves significant token reduction while maintaining high confidence and functionality across diverse analysis types.*
+
+## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
 ### Development Setup
 
 ```bash
-git clone https://github.com/uria-franko/itr.git
-cd itr
+git clone https://github.com/uria-franko/ITR.git
+cd ITR
 uv sync --dev
 
 # Run tests
@@ -273,19 +316,18 @@ uv run isort .
 uv run mypy itr/
 ```
 
-## =� License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## = Links
+## 🔗 Links
 
-- **Documentation**: [https://itr.readthedocs.io](https://itr.readthedocs.io)
-- **PyPI Package**: [https://pypi.org/project/itr](https://pypi.org/project/itr)
-- **Issue Tracker**: [https://github.com/uria-franko/itr/issues](https://github.com/uria-franko/itr/issues)
+- **PyPI Package**: *Coming Soon*
+- **Issue Tracker**: [https://github.com/uriafranko/ITR/issues](https://github.com/uriafranko/ITR/issues)
 
-## =� Examples
+## 📚 Examples
 
-Check out the [examples](itr/examples/) directory for more detailed usage examples:
+Check out the [examples](examples/) directory for more detailed usage examples:
 
 - Basic retrieval workflows
 - Custom instruction creation
@@ -293,21 +335,24 @@ Check out the [examples](itr/examples/) directory for more detailed usage exampl
 - Configuration examples
 - Performance optimization tips
 
-## <� Troubleshooting
+## 🔧 Troubleshooting
 
 ### Common Issues
 
 **"Module not found" errors**: Make sure you've installed all dependencies:
+
 ```bash
 uv sync
 ```
 
 **Memory issues with large corpora**: Use chunking and increase available memory:
+
 ```python
 config = ITRConfig(chunk_size_range=(100, 400))  # Smaller chunks
 ```
 
 **Poor retrieval quality**: Try adjusting scoring weights:
+
 ```python
 config = ITRConfig(
     dense_weight=0.6,    # Increase embedding weight
@@ -315,4 +360,11 @@ config = ITRConfig(
 )
 ```
 
-For more help, please [open an issue](https://github.com/uria-franko/itr/issues) on GitHub.
+For more help, please [open an issue](https://github.com/uriafranko/ITR/issues) on GitHub.
+
+---
+
+<div align="center">
+  <p><strong>Built with ❤️ for the AI Agent community</strong></p>
+  <p>⭐ Star this repo if you find ITR useful!</p>
+</div>

@@ -3,7 +3,7 @@ from typing import List, Optional
 from .__version__ import __version__
 from .assembly.prompt_builder import PromptBuilder
 from .core.config import ITRConfig
-from .core.types import InstructionFragment, RetrievalResult, Tool
+from .core.types import InstructionFragment, RetrievalResult, Tool, FragmentType
 from .indexing.corpus import InstructionCorpus, ToolCorpus
 from .retrieval.hybrid_retriever import HybridRetriever
 from .selection.budget_selector import BudgetAwareSelector
@@ -114,4 +114,4 @@ class ITR:
 
 
 # Export main classes
-__all__ = ["ITR", "ITRConfig", "RetrievalResult", "InstructionFragment", "Tool"]
+__all__ = ["ITR", "ITRConfig", "RetrievalResult", "InstructionFragment", "Tool", "FragmentType"]
