@@ -431,14 +431,18 @@ class ITRConfig:
         for negative_field in non_negative_fields:
             value = getattr(self, negative_field)
             if not isinstance(value, int) or value < 0:
-                errors.append(f"{negative_field} must be a non-negative integer, got {value}")
+                errors.append(
+                    f"{negative_field} must be a non-negative integer, got {value}"
+                )
 
         # Validate weights (should be non-negative floats)
         weight_fields = ["dense_weight", "sparse_weight", "rerank_weight"]
         for negative_field in weight_fields:
             value = getattr(self, negative_field)
             if not isinstance(value, (int, float)) or value < 0:
-                errors.append(f"{negative_field} must be a non-negative number, got {value}")
+                errors.append(
+                    f"{negative_field} must be a non-negative number, got {value}"
+                )
 
         # Validate confidence threshold (0-1 range)
         if not 0 <= self.confidence_threshold <= 1:
