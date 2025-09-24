@@ -35,6 +35,7 @@
   - [🔍 How It Works](#-how-it-works)
     - [Fragment Types](#fragment-types)
   - [🎯 Performance](#-performance)
+    - [Token Optimization Results](#token-optimization-results)
   - [🤝 Contributing](#-contributing)
     - [Development Setup](#development-setup)
   - [📄 License](#-license)
@@ -59,7 +60,7 @@
 
 ```bash
 # Install ITR
-uv add itr
+uv add instruction-tool-retrieval
 
 # Or install from source
 git clone https://github.com/uriafranko/ITR.git
@@ -70,7 +71,7 @@ uv sync
 ### Using pip
 
 ```bash
-pip install itr
+pip install instruction-tool-retrieval
 ```
 
 ### Development Installation
