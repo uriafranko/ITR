@@ -1,0 +1,174 @@
+[
+  {
+    "name": "calculator",
+    "description": "Perform mathematical calculations and numerical operations",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "expression": {
+          "type": "string",
+          "description": "Mathematical expression to evaluate"
+        }
+      },
+      "required": ["expression"]
+    },
+    "exemplars": [
+      "calculator({\"expression\": \"sqrt(16)\"})",
+      "calculator({\"expression\": \"2 * pi * 10\"})"
+    ]
+  },
+  {
+    "name": "web_search",
+    "description": "Search the internet for current information",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search query"
+        },
+        "max_results": {
+          "type": "integer",
+          "description": "Maximum number of results",
+          "default": 5
+        }
+      },
+      "required": ["query"]
+    },
+    "exemplars": [
+      "web_search({\"query\": \"current weather San Francisco\"})",
+      "web_search({\"query\": \"latest AI news\", \"max_results\": 10})"
+    ]
+  },
+  {
+    "name": "file_operations",
+    "description": "Read, write, and manipulate files",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "operation": {
+          "type": "string",
+          "enum": ["read", "write", "append", "delete"],
+          "description": "File operation to perform"
+        },
+        "path": {
+          "type": "string",
+          "description": "File path"
+        },
+        "content": {
+          "type": "string",
+          "description": "Content for write/append operations"
+        }
+      },
+      "required": ["operation", "path"]
+    }
+  },
+  {
+    "name": "code_executor",
+    "description": "Execute Python code snippets safely",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Python code to execute"
+        },
+        "timeout": {
+          "type": "integer",
+          "description": "Execution timeout in seconds",
+          "default": 30
+        }
+      },
+      "required": ["code"]
+    }
+  },
+  {
+    "name": "database_query",
+    "description": "Query relational databases using SQL",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "SQL query"
+        },
+        "database": {
+          "type": "string",
+          "description": "Database connection string"
+        }
+      },
+      "required": ["query", "database"]
+    }
+  },
+  {
+    "name": "api_request",
+    "description": "Make HTTP API requests",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "API endpoint URL"
+        },
+        "method": {
+          "type": "string",
+          "enum": ["GET", "POST", "PUT", "DELETE"],
+          "default": "GET"
+        },
+        "headers": {
+          "type": "object",
+          "description": "Request headers"
+        },
+        "body": {
+          "type": "object",
+          "description": "Request body for POST/PUT"
+        }
+      },
+      "required": ["url"]
+    }
+  },
+  {
+    "name": "text_analyzer",
+    "description": "Analyze text for sentiment, entities, and key phrases",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text to analyze"
+        },
+        "analysis_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["sentiment", "entities", "key_phrases", "language"]
+          }
+        }
+      },
+      "required": ["text", "analysis_type"]
+    }
+  },
+  {
+    "name": "image_processor",
+    "description": "Process and analyze images",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_path": {
+          "type": "string",
+          "description": "Path to image file"
+        },
+        "operation": {
+          "type": "string",
+          "enum": ["resize", "crop", "rotate", "analyze", "ocr"],
+          "description": "Image operation"
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Operation-specific parameters"
+        }
+      },
+      "required": ["image_path", "operation"]
+    }
+  }
+]
