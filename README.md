@@ -12,6 +12,8 @@
 
 > 💡 **Key Benefits**: Reduce context bloat, improve tool selection and latency, and optimize token usage through intelligent hybrid retrieval and budget-aware selection algorithms.
 
+> ⚠️ **Note**: This framework was developed to support research findings. For production use, it is recommended to either create a custom solution tailored to your specific needs or, better yet, contribute to improving this framework.
+
 ## 📑 Table of Contents
 
 - [ITR: Instruction-Tool Retrieval](#itr-instruction-tool-retrieval)
